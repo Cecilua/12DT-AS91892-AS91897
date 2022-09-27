@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 200px;
+    background-color: #258099;
+}
+.navbar {
+    display: flex;
+    width: 100vw;
+    height: 60px;
+    overflow: hidden;
+    position: sticky;
+    top: 0;
+    z-index: 3;
+}
+.navbar a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-grow: 1;
+    height: 55px;
+    background-color: white;
+}
+.navbar a.active {
+    background-color: #7BD2E8;
+
+
+}
+.navbar a:hover {
+    border-bottom: solid 5px #24839C;
+
+}
+.main {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+}
+.menu {
+    display: flex;
+    flex-direction: column;
+}
+.menu-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height:30px;
+}
+.menu-filters {
+    display: flex;
+    flex-direction: row;
+    height:30px;
+    z-index: 2;
+}
+.multiselect {
+    width: 200px;
+    background-color: white;
+    padding: 10px;
+}
+.selectBox {
+    position: relative;
+}
+.selectBox select {
+    width: 100%;
+    font-weight: bold;
+}
+.overSelect {
+    position: absolute;
+    border: 2px solid red;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+#checkboxes {
+    display: none;
+}
+#checkboxes label {
+    display: flex;
+    z-index: 2;
+}
+#checkboxes label:hover {
+    background-color: #1e90ff;
+}
+.single_display {
+    display: flex;
+    width: 100vw;
+    border: solid 2px red;
+    flex-grow: 1;
+    padding: 20px;
+}
+.big-image{
+    min-width: 400px;
+    min-height: 400px;
+    background-color: lightgray;
+    margin-right: 20px;
+}
+.product_info{
+    flex-direction: column;
+    align-items: center;
+    border: solid 2px blue;
+    width: 100%;
+}
+.products {
+    max-width: 1270px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px 20px;
+    padding: 20px 0;
+}
+.product {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid black;
+}
+.product .product-image {
+    width: 260px;
+    height: 200px;
+    background-color: lightgray;
+}
