@@ -25,24 +25,25 @@
         $filter_query = $filter_query." GROUP BY product_id";
     }
 
-/* Checks if user chose to sort items --> if yes, adds the sorting to the query */
-$sorting = isset($_POST['sort_by']) ? $_POST['sort_by'] : "";
-if ($sorting != "") {
-    $filter_query = $filter_query.$sorting;
-}
+    /* Checks if user chose to sort items --> if yes, adds the sorting to the query */
+    $sorting = isset($_POST['sort_by']) ? $_POST['sort_by'] : "";
+    if ($sorting != "") {
+        $filter_query = $filter_query.$sorting;
+    }
 
-/* queries the database */
-$filter_result = mysqli_query($connection, $filter_query);
+    /* queries the database */
+    $filter_result = mysqli_query($connection, $filter_query);
 ?>
 
 <!DOCTYPE html>
 <html lang = "en">
     <head>
         <title>WGC Canteen</title>
-        <link href = "style.css" rel = "stylesheet" type = "text/css" />
-        <!--javascript code for checkboxes inside drop down menu taken from https://stackoverflow.com/a/27547021-->
-        <!--answer by user vitfo (https://stackoverflow.com/users/3025330/vitfo) on stack overflow-->
+        <link href = "style.css" rel = "stylesheet" type = "text/css"/>
+        <link rel = "icon" rel = "shortcut icon" sizes = "32x32" href = "img/favicon-32x32.png"/>
         <script>
+            // javascript code for checkboxes inside drop down menu taken from https://stackoverflow.com/a/27547021
+            // answer by user vitfo (https://stackoverflow.com/users/3025330/vitfo) on stack overflow
             let expanded = false;
             // shows checkboxes (used when clicking on the dropdown menu)
             function showCheckboxes() {
@@ -59,7 +60,7 @@ $filter_result = mysqli_query($connection, $filter_query);
     </head>
     <body>
         <div class = "header">
-            <img src = "img/wgc-logo.png" src = "index.php" style = "height: 150px; width: 150px;"/>
+            <a href = "index.php"><img src = "img/wgc-logo.png"/></a>
             <h1>WGC Canteen</h1>
         </div>
         <div class = "navbar">
@@ -70,7 +71,7 @@ $filter_result = mysqli_query($connection, $filter_query);
         <div class = "main">
             <div class = "menu">
                 <div class = "menu-top">
-                    <div>Menu - Hide filters</div>
+                    <div><h1 style="color: #354E54"> Menu Filters:</h1></div>
                 </div>
                 <div class = "menu-filters">
                     <!--category form-->
@@ -141,5 +142,6 @@ $filter_result = mysqli_query($connection, $filter_query);
     </body>
 </html>
 <?php
+    /* ends connection */
     mysqli_close($connection);
 ?>

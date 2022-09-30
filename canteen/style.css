@@ -18,7 +18,6 @@ h1 {
     font-size: 30px;
     color: white;
 }
-
 /* ---------------------
    Top Bar
    ---------------------*/
@@ -70,7 +69,7 @@ h1 {
 .menu-top {
     display: flex;
     flex-direction: row;
-    height:30px;
+    padding: 10px 20px;
 }
 .menu-filters {
     display: flex;
@@ -83,6 +82,11 @@ h1 {
 /* ---------------------
    Filter Selection
    ---------------------*/
+/*
+    classes for checkboxes inside drop down menu taken from https://stackoverflow.com/a/27547021
+    answer by user vitfo (https://stackoverflow.com/users/3025330/vitfo) on stack overflow
+    (though of course, the css code itself was all created by me to fit my website design)
+*/
 .multiselect {
     width: 200px;
     background: white;
@@ -148,9 +152,7 @@ input[type = submit] {
     border-radius: 10px;
     padding: 2px;
     margin: 0px 10px;
-
 }
-
 /* ---------------------
    Product Displays
    ---------------------*/
@@ -159,7 +161,7 @@ input[type = submit] {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
+    padding: 30px;
 }
 .single-display {
     display: flex;
@@ -168,6 +170,11 @@ input[type = submit] {
     flex-grow: 1;
     padding: 20px;
     margin-bottom: 20px;
+}
+.single-product-center {
+    display: flex;
+    align-items: center;
+    margin-top: 70px;
 }
 .big-image {
     min-width: 300px;
@@ -181,6 +188,7 @@ input[type = submit] {
     font-size: 19px;
     width: 1000px;
     border: solid 2px #354E54;
+    height: 300px;
 }
 .product-info h1 {
     font-size: 30px;
