@@ -7,16 +7,18 @@
     padding: 0;
     box-sizing: border-box;
 }
-p {
+p, a {
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
     color: #354E54;
+    text-decoration: none;
 }
 h1 {
     font-family: 'Open Sans', sans-serif;
     font-size: 30px;
     color: white;
 }
+
 /* ---------------------
    Top Bar
    ---------------------*/
@@ -132,38 +134,57 @@ input[type = submit] {
 /* ---------------------
    Sort Form
    ---------------------*/
-.sort_form {
+.sort-form {
     display: flex;
     align-items: center;
     height: 50px;
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
 }
-.sort_form select {
+.sort-form select {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    border: 3px solid #24839C;
+    border-radius: 10px;
+    padding: 2px;
+    margin: 0px 10px;
 
 }
 
 /* ---------------------
    Product Displays
    ---------------------*/
-.single_display {
+.center-header {
     display: flex;
-    width: 100vw;
-    border: solid 2px red;
-    flex-grow: 1;
-    padding: 20px;
-}
-.big-image{
-    min-width: 300px;
-    min-height: 300px;
-    background-color: lightgray;
-    margin-right: 20px;
-}
-.product_info{
+    justify-content: center;
     flex-direction: column;
     align-items: center;
-    border: solid 2px blue;
-    width: 100%;
+    padding: 20px;
+}
+.single-display {
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+    flex-grow: 1;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.big-image {
+    min-width: 300px;
+    min-height: 300px;
+    margin-right: 20px;
+}
+.product-info {
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    font-size: 19px;
+    width: 1000px;
+    border: solid 2px #354E54;
+}
+.product-info h1 {
+    font-size: 30px;
+    color: #354E54
 }
 .products {
     max-width: 1270px;
@@ -180,7 +201,7 @@ input[type = submit] {
     flex-direction: column;
     align-items: center;
     padding: 20px;
-    border: 1px solid black;
+    border: 1px solid #354E54;
 }
 .product .product-image {
     width: 250px;
