@@ -1,30 +1,32 @@
-<?php
-    /* Connect to the database */
-    $connection = mysqli_connect('localhost', 'kuntzece', 'smartspoon57', 'kuntzece_canteen');
-    /* If connection error --> exit */
-    if (mysqli_connect_errno()) {
-        echo 'Failed to connect </3';
-        exit();
-    }
-
-    /* selects a random product */
-    $random_query = "SELECT products.*, images.* FROM products JOIN images ON products.img_id = images.img_id WHERE products.cost > 0 ORDER BY RAND() LIMIT 1";
-    $random_result = mysqli_query($connection, $random_query);
-    /* random product query result */
-    $random_record = mysqli_fetch_assoc($random_result);
-?>
 <!DOCTYPE html>
 <html lang="en">
+    <?php
+        /* Connect to the database */
+        $connection = mysqli_connect('localhost', 'kuntzece', 'smartspoon57', 'kuntzece_canteen');
+        /* If connection error --> exit */
+        if (mysqli_connect_errno()) {
+            echo 'Failed to connect </3';
+            exit();
+        }
+
+        /* selects a random product */
+        $random_query = "SELECT products.*, images.* FROM products JOIN images ON products.img_id = images.img_id WHERE products.cost > 0 ORDER BY RAND() LIMIT 1";
+        $random_result = mysqli_query($connection, $random_query);
+        /* random product query result */
+        $random_record = mysqli_fetch_assoc($random_result);
+    ?>
     <head>
         <title>WGC Canteen</title>
         <link href="style.css" rel="stylesheet" type="text/css"/>
         <link rel = "icon" rel = "shortcut icon" sizes = "32x32" href = "img/favicon-32x32.png"/>
     </head>
     <body>
+        <!--header-->
         <div class = "header">
             <a href = "index.php"><img src = "img/wgc-logo.png"/></a>
             <h1>WGC Canteen</h1>
         </div>
+        <!--navbar-->
         <div class = "navbar">
             <a href = 'index.php'>our products</a>
             <a href = 'weekly-specials.php'>weekly specials</a>

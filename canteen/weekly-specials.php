@@ -1,29 +1,31 @@
-<?php
-    /* Connect to the database */
-    $connection = mysqli_connect('localhost', 'kuntzece', 'smartspoon57', 'kuntzece_canteen');
-    /* If connection error --> exit */
-    if (mysqli_connect_errno()) {
-        echo 'Failed to connect </3';
-        exit();
-    }
-
-    /* query all weekly special information */
-    $weekly_special_query = "SELECT products.*, images.*, weekly_specials.* FROM products JOIN images ON products.img_id = images.img_id JOIN weekly_specials ON products.product_id = weekly_specials.product_id WHERE weekly_specials.special_cost > 0 ORDER BY weekly_specials.day_order ASC";
-    $weekly_special_result = mysqli_query($connection, $weekly_special_query);
-
-?>
 <!DOCTYPE html>
 <html lang="en">
+    <?php
+        /* Connect to the database */
+        $connection = mysqli_connect('localhost', 'kuntzece', 'smartspoon57', 'kuntzece_canteen');
+        /* If connection error --> exit */
+        if (mysqli_connect_errno()) {
+            echo 'Failed to connect </3';
+            exit();
+        }
+
+        /* query all weekly special information */
+        $weekly_special_query = "SELECT products.*, images.*, weekly_specials.* FROM products JOIN images ON products.img_id = images.img_id JOIN weekly_specials ON products.product_id = weekly_specials.product_id WHERE weekly_specials.special_cost > 0 ORDER BY weekly_specials.day_order ASC";
+        $weekly_special_result = mysqli_query($connection, $weekly_special_query);
+
+    ?>
     <head>
         <title>WGC Canteen</title>
         <link href="style.css" rel="stylesheet" type="text/css"/>
         <link rel = "icon" rel = "shortcut icon" sizes = "32x32" href = "img/favicon-32x32.png"/>
     </head>
     <body>
+        <!--header-->
         <div class = "header">
             <a href = "index.php"><img src = "img/wgc-logo.png"/></a>
             <h1>WGC Canteen</h1>
         </div>
+        <!--navbar-->
         <div class = "navbar">
             <a href = 'index.php'>our products</a>
             <a href = 'weekly-specials.php' class = "active">weekly specials</a>

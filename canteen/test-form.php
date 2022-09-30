@@ -16,18 +16,13 @@ echo $filters_str;
 
 $filter_query = "SELECT products.* FROM products JOIN product_info ON products.product_id = product_info.product_id";
 if ($filters_str != "") {
-    $filter_query = $filter_query." WHERE product_info.nutritional_info_id in (".$filters_str.") HAVING COUNT ";
+    $filter_query = $filter_query." WHERE product_info.nutritional_info_id in (".$filters_str.")";
 }
 $filter_result = mysqli_query($connection, $filter_query);
-while($filter_record = mysqli_fetch_assoc($filter_result)) {
-//    echo "<br>".$filter_record['name']."<br>";
-//    echo "<br>".$filter_record['cost']."<br>";
+
 ?>
-    <div>
-        <?php echo $filter_record['name'] ?>
-    </div>
 <?php
-}
+
 
 $all_nutritional_query = "SELECT * FROM nutritional_info";
 $all_nutritional_result = mysqli_query($connection, $all_nutritional_query);
@@ -80,6 +75,10 @@ $all_nutritional_result = mysqli_query($connection, $all_nutritional_query);
                             echo $all_nutritional_record['name'];
                             echo '</label>';
                         }
+                        while($filter_record = mysqli_fetch_assoc($filter_result)) {
+                            echo "<br>".$filter_record['name']."<br>";
+                            echo "<br>".$filter_record['cost']."<br>";
+                            }
                         ?>
 
                     </div>

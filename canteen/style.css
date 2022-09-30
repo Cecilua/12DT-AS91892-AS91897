@@ -188,7 +188,7 @@ input[type = submit] {
     font-size: 19px;
     width: 1000px;
     border: solid 2px #354E54;
-    height: 300px;
+    min-height: 300px;
 }
 .product-info h1 {
     font-size: 30px;
